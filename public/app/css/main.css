@@ -48,6 +48,10 @@ main {
     padding-left: 85px;
 }
 
+main.container-fluid{
+    padding:0;
+}
+
 .clear-float {
     clear: both;
 }
@@ -326,6 +330,22 @@ nav .search-img {
 
 
 /*SINGLE BLOG*/
+.breadcrumb-item + .breadcrumb-item:before {
+    color: #605f5f;
+    font-size: .9rem;
+    content: ">";
+    padding: 0 5px;
+}
+.breadcrumb{
+    padding-left: 6em;
+    font-family: DroidSans;
+    font-size: .9rem;
+    background:transparent;
+}
+
+.breadcrumb a{
+    color:#605f5f;
+}
 
 .current-nav {
     color: #605f5f;

@@ -1,14 +1,19 @@
-<div class="current-nav">
+{{!-- <div class="current-nav">
     <p><a href="#/">Home</a> >> <a>{{category}}</a> >> <a>{{title}}</a></p>
-</div>
-<div class="container-fluid i-padding-reset">
+</div> --}}
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="#/home">Home</a></li>    
+  <li class="breadcrumb-item"><a href="#">{{category}}</a></li>
+  <li class="breadcrumb-item active">{{title}}</li>
+</ol>
+<div class="i-padding-reset">
     <div class="row">
-        <div class="">
-            <div class="left-part-page-wrapper">
+        <div class="col-lg-12 col-xl-8 col-md-12 col-sm-12 col-xs-12">
+            <div class="">
             <div class="current-box">
                 <div class="box-top-border"></div>
                 <div class="row">
-                    <div class="col-3 current-box-left">
+                    <div class="col-lg-4">
                         <div class="current-box-image i-push-left">
                             <img src="{{image}}" alt="">
                             <div class="box-category">{{category}}</div>
@@ -104,8 +109,8 @@
             </div>
         </div>
         </div>
-        <div class="">
-            <aside>
+        <div class="d-none d-xl-block col-lg-4">
+            <aside class="">
                 <div class="aside-post aside-box">
                     <ul class="nav-ul">
                         <li>
