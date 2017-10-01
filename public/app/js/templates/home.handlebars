@@ -1,0 +1,44 @@
+<div class="container-fluid">
+    <div class="row boxes-container posts-container">
+        {{#blogs}}
+            <div class="col-xs-2">
+               {{#ifThird @index}}
+                <div class="big-box">
+                {{else}}
+                <div class="box">
+                {{/ifThird}}
+                    <div class="box-image" style="background-image: url({{image}})"></div>
+                    <p class="box-category">{{category}}</p>
+                    <p class="box-subcategory">{{subcategory}}</p>
+                    <h2 class="box-title"><a href="#/blog/{{_id}}">{{title}}</a></h2>
+                    <p class="box-author">Posted by {{postedBy}}</p>
+                    <p class="box-content">{{article}}</p>
+                    <div class="box-bottom-border"></div>
+                </div>
+            </div>
+        {{/blogs}}
+    </div>
+</div>
+<!--<div class="container-fluid">
+    <div class="row boxes-container">
+        <div class="col-1">
+            {{#if canPrev}}
+                <img src="../../../assets/pagination-left.png" alt="" class="page-img" onclick="prevPage()">
+            {{else}}
+                <img src="../../../assets/pagination-left.png" alt="" class="page-img">
+            {{/if}}
+        </div>
+        <div class="col-10 text-center">
+            {{#each pages}}
+                <span class="i-page-link"><a href="#/?page={{this}}">{{this}}</a></span>
+            {{/each}}
+        </div>
+        <div class="col-1">
+            {{#if canNext}}
+                <img src="../../../assets/pagination-right.png" alt="" class="page-img" onclick="nextPage()">
+            {{else}}
+                <img src="../../../assets/pagination-right.png" alt="" class="page-img">
+            {{/if}}
+        </div>
+    </div>
+</div>-->

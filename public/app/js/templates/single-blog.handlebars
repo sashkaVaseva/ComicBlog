@@ -1,0 +1,172 @@
+<div class="current-nav">
+    <p><a href="#/">Home</a> >> <a>{{category}}</a> >> <a>{{title}}</a></p>
+</div>
+<div class="container-fluid i-padding-reset">
+    <div class="row">
+        <div class="">
+            <div class="left-part-page-wrapper">
+            <div class="current-box">
+                <div class="box-top-border"></div>
+                <div class="row">
+                    <div class="col-3 current-box-left">
+                        <div class="current-box-image i-push-left">
+                            <img src="{{image}}" alt="">
+                            <div class="box-category">{{category}}</div>
+                        </div>
+                        <div class="current-box-tags i-push-left">
+                            <div class="tags-wrapper">
+                            <h2>Tags</h2>
+                            <ul>
+                                {{#subcategory}}
+                                <li>{{subcategory}}</li>
+                                {{/subcategory}}
+                            </ul>
+                            <div class="clear-float"></div>
+                            </div>
+                        </div>
+                        <div class="current-box-related i-push-left">
+                            <h2>Related posts</h2>
+                            <ul>
+                                <li><img src="../../../assets/li-link.png" alt="" class="li-link"><span>asdasd</span></li>
+                                <li><img src="../../../assets/li-link.png" alt="" class="li-link"><span>asdasd</span></li>
+                                <li><img src="../../../assets/li-link.png" alt="" class="li-link"><span>asdasd</span></li>
+                            </ul>
+                        </div>
+                        <div class="current-box-share i-push-left">
+                            <h2>Share this</h2>
+                            <ul>
+                                <li><a><img src="../../../assets/share-twitter.png" alt=""></a></li>
+                                <li><a><img src="../../../assets/share-facebook.png" alt=""></a></li>
+                                <li><a><img src="../../../assets/share-middle.png" alt=""></a></li>
+                                <li><a><img src="../../../assets/share-digg.png" alt=""></a></li>
+                                <li><a><img src="../../../assets/share-reddit.png" alt=""></a></li>
+                            </ul>
+                            <div class="clear-float"></div>
+                        </div>
+                    </div>
+                    <div class="col-9 current-box-right">
+                        <h2 class="box-title">{{title}}</h2>
+                        <p class="box-author">POSTED BY {{postedBy}} IN {{category}} | Comments {{comments.length}}</p>
+                        <p class="box-content">{{article}}</p>
+                    </div>
+                </div>
+                <div class="box-bottom-border"></div>
+            </div>
+            <div class="current-box-comments">
+                <div class="box-top-border"></div>
+                <div>
+                    <h2 class="box-title">{{comments.length}} Comments</h2>
+                </div>
+                <div class="comments-container">
+                    {{#each comments}}
+                        <div class="comment">
+                            <div class="comment-data">
+                                <img src="http://via.placeholder.com/100x100" alt="" class="comment-img">
+                                <div class="comment-details">
+                                    <h2 class="comment-author">{{postedBy}}</h2>
+                                    <p class="comment-content">{{article}}</p>
+                                    <button class="reply-button">REPLY</button>
+                                </div>
+                            </div>
+                            {{#if subComments.length}}
+                                <div class="subcomments">
+                                    {{#each subComments}}
+                                        <div class="subcomment">
+                                            <div class="comment-data">
+                                                <img src="http://via.placeholder.com/100x100" alt="" class="comment-img">
+                                                <div class="comment-details">
+                                                    <h2 class="comment-author">{{postedBy}}</h2>
+                                                    <p class="comment-content">{{article}}</p>
+                                                    <button class="reply-button">REPLY</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {{/each}}
+                                </div>
+                            {{/if}}
+                            <br>
+                            <br>
+                        </div>
+                    {{/each}}
+                </div>
+                <form action="/blog/{{_id}}/comments/-2" class="comment-form" method="POST">
+                    <h2 class="box-title">Leave a comment</h2>
+                    <input type="text" placeholder="Nickname" id="form-nickname">
+                    <br>
+                    <input type="text" placeholder="Avatar url" id="form-avatarUrl">
+                    <br>
+                    <textarea rows="4" placeholder="Message" id="form-message"></textarea>
+                    <br>
+                    <button class="submit-comment">SUBMIT</button>
+                    {{!--<input type="submit" value="SUBMIT"/>--}}
+                </form>
+                <div class="box-bottom-border"></div>
+            </div>
+        </div>
+        </div>
+        <div class="">
+            <aside>
+                <div class="aside-post aside-box">
+                    <ul class="nav-ul">
+                        <li>
+                            <h2 class="aside-title">Recent</h2>
+                        </li>
+                        <li>
+                            <h2 class="aside-title">Popular</h2>
+                        </li>
+                        <li>
+                            <h2 class="aside-title">Random</h2>
+                        </li>
+                    </ul>
+                    <div class="aside-content">
+                        <div class="content">
+                            <img src="../../../assets/share-facebook.png" alt="">
+                            <div class="content-details">
+                                <h3 class="content-title">asdasd</h3>
+                                <p class="content-date">asdasdas</p>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <img src="../../../assets/share-facebook.png" alt="">
+                            <div class="content-details">
+                                <h3 class="content-title">asdasd</h3>
+                                <p class="content-date">asdasdas</p>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <img src="../../../assets/share-facebook.png" alt="">
+                            <div class="content-details">
+                                <h3 class="content-title">asdasd</h3>
+                                <p class="content-date">asdasdas</p>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <img src="../../../assets/share-facebook.png" alt="">
+                            <div class="content-details">
+                                <h3 class="content-title">asdasd</h3>
+                                <p class="content-date">asdasdas</p>
+                            </div>
+                        </div>
+                        <div class="box-bottom-border"></div>
+                    </div>
+                </div>
+                <div class="aside-widget aside-box">
+                    <h2 class="aside-title">Custom text widget</h2>
+                    <ul>
+                        <li><img src="../../../assets/li-link.png" alt="" class="li-link">aasdas</li>
+                        <li><img src="../../../assets/li-link.png" alt="" class="li-link">aasdas</li>
+                        <li><img src="../../../assets/li-link.png" alt="" class="li-link">aasdas</li>
+                        <li><img src="../../../assets/li-link.png" alt="" class="li-link">aasdas</li>
+                        <li><img src="../../../assets/li-link.png" alt="" class="li-link">aasdas</li>
+                    </ul>
+                    <div class="box-bottom-border"></div>
+                </div>
+                <div class="aside-widget aside-box">
+                    <h2 class="aside-title">Custom text widget</h2>
+                    <p class="text-content">Pesho gosho Toshooo Peshoo</p>
+                    <div class="box-bottom-border"></div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="container-fluid">
+<section class="posts blog-page-posts row">
+    {{#blogs}}
+        <div class="post-item blog-page-post-item col-sm-6">
+            <div>
+                <h3><a href="#/blog/{{this._id}}">{{this.title}}</a></h3>
+            </div>
+            <div class="post-box">
+                <a href="#/blog/{{this._id}}"><img class="post-image image-responsive" src="{{this.image}}" alt="{{this.title}}"></a>
+            </div>
+        </div>
+    {{/blogs}}
+</section>
+</div>
