@@ -32,13 +32,13 @@ let blogPostSchema = mongoose.Schema({
     },
     postedOn: {
         type: String,
-        default: dateFormat("fullDate")
+        default: dateFormat("mmm")
     },
     comments: [{
         postedBy: String,
         postedOn: {
             type: String,
-            default: dateFormat("fullDate")
+            default: dateFormat("mmm")
         },
         content: String
             // required: requiredMessage
