@@ -5,7 +5,8 @@ module.exports = function({ app, controller }) {
     let router = new Router();
 
     router
-        .get("/blogs", controller.blogController.getAll)
+    //.get("/blogs", controller.blogController.getAll)
+        .get("/blogs", controller.blogController.listNewest)
         .get("/blogs/:id", controller.blogController.getById)
         .post("/blogs/:id", controller.blogController.addComment)
         .get("/users", controller.userController.getAll)
