@@ -5,15 +5,6 @@ import notifier from "../../../helpers/notifier.js";
 import data from "../data/blogs-data.js";
 
 export default {
-    all: function(context) {
-        Promise.all([data.all(), templates.load("list-blogs")])
-            .then(function([blogs, template]) {
-                console.log(blogs);
-                context.$element().html(template({
-                    blogs: blogs
-                }));
-            });
-    },
     home: function(context) {
         Promise.all([data.all(), templates.load("home")])
             .then(function([blogs, template]) {
@@ -25,6 +16,16 @@ export default {
 
                 context.$element().html(template({
                     // blogs: homePageBlogs,
+                    blogs: blogs
+                }));
+            });
+    },
+    allByCategoryName: function(context) {
+        let category = context.params.category;
+        Promise.all([data.byCategoryName(category), templates.load("list-blogs-category")])
+            .then(function([blogs, template]) {
+                console.log(blogs);
+                context.$element().html(template({
                     blogs: blogs
                 }));
             });

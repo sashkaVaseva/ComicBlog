@@ -79,6 +79,16 @@ module.exports = function(BlogPost) {
         return promise;
     }
 
+    function getCategoryByName(category) {
+        return new Promise((resolve, reject) => {
+            BlogPost.find({ category: category }, (err, blogs) => {
+                if (err) {
+                    return reject(err);
+                }
+                return resolve(blogs);
+            });
+        });
+    }
 
 
     return {
@@ -86,6 +96,7 @@ module.exports = function(BlogPost) {
         getById,
         all,
         addComment,
-        sortByNewlyCreated
+        sortByNewlyCreated,
+        getCategoryByName
     };
 };
