@@ -22,30 +22,23 @@ import { nextPage as nextPage, prevPage as prevPage, getPage as getPage } from "
 
     $(function() {
         sammyApp.run("#/");
+        $(document).ready(() => {
+            $("#create-post").hide();
+            $(document).on("click", ".login-click", () => {
+                $("#create-post").show();
+            });
+        });
+        $(document).on("click", ".register-click", () => {
+            $("#create-post").show();
+            $("#login").hide();
+        });
         $("#logout").on("click", function() {
             localStorage.clear();
             $("#register").show();
             $("#login").show();
             $("#logout").hide();
+            $("#create-post").hide();
             notifier.send("You logged out");
         });
-    });
-})());
-
-((function() {
-    $(document).ready(() => {
-        $(document).on("click", ".prev-page-link", () => {
-            prevPage();
-        });
-        $(document).on("click", ".next-page-link", () => {
-            nextPage();
-        });
-        /*$(document).on('click', '.reply-button', (ev) => {
-            postComment(ev);
-        });
-
-        $(document).on('click', '.submit-button', (ev) => {
-            postComment(ev);
-        });*/
     });
 })());
