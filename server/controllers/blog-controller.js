@@ -38,6 +38,7 @@ module.exports = function(data) {
                     res.status(200).json({ blog });
                 }).catch((err) => res.status(500).json(err, "Blog not found"));
         },
+
         addComment(req, res) {
             let comment = {
                 postedBy: req.body.postedBy,
@@ -54,17 +55,20 @@ module.exports = function(data) {
 
                 });
         },
+
         listNewest(req, res) {
             data.blogData.sortByNewlyCreated()
                 .then(blogs => {
                     res.status(200).json(blogs);
                 }).catch((err) => res.status(500).json(err, "Blogs not found"));
         },
+
         listBlogsByCategoryByName(req, res) {
-            data.blogData.getCategoryByName(req.params.category)
+            data.blogData.getCategoryByName(req.params.subcategory, req.params.category)
                 .then(blogs => {
                     res.status(200).json(blogs);
                 }).catch((err) => res.status(500).json(err, "Blogs not found"));
         }
+
     };
 };

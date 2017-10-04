@@ -79,9 +79,9 @@ module.exports = function(BlogPost) {
         return promise;
     }
 
-    function getCategoryByName(category) {
+    function getCategoryByName(subcategory, category) {
         return new Promise((resolve, reject) => {
-            BlogPost.find({ category: category }, (err, blogs) => {
+            BlogPost.find({ subcategory: subcategory, category: category }, (err, blogs) => {
                 if (err) {
                     return reject(err);
                 }

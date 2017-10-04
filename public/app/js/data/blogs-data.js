@@ -16,8 +16,8 @@ export default {
     addComment: function(id, comment) {
         return requester.post("/blogs/" + id, comment);
     },
-    byCategoryName: function(category) {
-        return requester.get("/blogs/category/" + category).then(blogs => {
+    byCategoryName: function(subcategory, category) {
+        return requester.get("/blogs/" + subcategory + "/" + category).then(blogs => {
             return blogs;
         });
     }

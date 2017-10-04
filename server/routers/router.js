@@ -9,7 +9,7 @@ module.exports = function({ app, controller }) {
         .get("/blogs", controller.blogController.listNewest)
         .get("/blogs/:id", controller.blogController.getById)
         .post("/blogs/:id", controller.blogController.addComment)
-        .get("/blogs/category/:category", controller.blogController.listBlogsByCategoryByName)
+        .get("/blogs/:subcategory/:category", controller.blogController.listBlogsByCategoryByName)
         .get("/users", controller.userController.getAll)
         .get("/users/:id", controller.userController.getById)
         .post("/blogs", controller.blogController.create)

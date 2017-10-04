@@ -21,8 +21,9 @@ export default {
             });
     },
     allByCategoryName: function(context) {
+        let subcategory = context.params.subcategory;
         let category = context.params.category;
-        Promise.all([data.byCategoryName(category), templates.load("list-blogs-category")])
+        Promise.all([data.byCategoryName(subcategory, category), templates.load("list-blogs-category")])
             .then(function([blogs, template]) {
                 console.log(blogs);
                 context.$element().html(template({
