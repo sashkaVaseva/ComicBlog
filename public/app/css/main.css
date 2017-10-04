@@ -303,7 +303,15 @@ nav .search-img {
     font-weight: bold;
     /* trial */
     text-transform: uppercase;
+}
+
+.box-title a {
     color: #7e426d;
+}
+
+.box-title a:hover {
+    text-decoration: none;
+    color: #dcc08e;
 }
 
 .box-author {
