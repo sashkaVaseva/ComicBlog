@@ -1,5 +1,5 @@
 <div class="container-fluid">
-    <div class="row boxes-container posts-container">
+    <div class="row">
         {{#blogs}}
             <div class="col-xs-2">
                {{#ifThird @index}}
@@ -9,6 +9,7 @@
                 {{/ifThird}}
                     <div class="box-image" style="background-image: url({{image}})"></div>
                     <p class="box-category">{{category}}</p>
+                    <p class="box-date">{{postedOn}}</p>
                     <p class="box-subcategory">{{subcategory}}</p>
                     <h2 class="box-title"><a href="#/blog/{{_id}}">{{title}}</a></h2>
                     <p class="box-author">Posted by {{postedBy}}</p>
@@ -18,21 +19,31 @@
             </div>
         {{/blogs}}
     </div>
-</div>
-<div class="container-fluid">
-    <div class="row boxes-container">
-        <div class="col-1">
-                <img src="../../../assets/pagination-left.png" alt="" class="page-img">
-        </div>
-        <div class="col-10 text-center">
-                <span class="i-page-link"><a href="#">1</a></span>
-                <span class="i-page-link"><a href="#">2</a></span>
-                <span class="i-page-link"><a href="#">3</a></span>
-                <span class="i-page-link"><a href="#">4</a></span>
-                <span class="i-page-link"><a href="#">5</a></span>
-        </div>
-        <div class="col-1">
-                <img src="../../../assets/pagination-right.png" alt="" class="page-img">
-        </div>
+    <div class="col-xs-2 float-right">
+    <aside>
+        <div class="aside-widget aside-box">
+                    <h2 class="aside-title">Recent Comments</h2>
+                    <ul>
+                        <li><img src="../../../assets/li-link.png" alt="" class="li-link">aasdas</li>
+                        <li><img src="../../../assets/li-link.png" alt="" class="li-link">aasdas</li>
+                        <li><img src="../../../assets/li-link.png" alt="" class="li-link">aasdas</li>
+                        <li><img src="../../../assets/li-link.png" alt="" class="li-link">aasdas</li>
+                        <li><img src="../../../assets/li-link.png" alt="" class="li-link">aasdas</li>
+                    </ul>
+                    <div class="box-bottom-border"></div>
+                </div>
+                <div class="aside-widget aside-box">
+                   <h2 class="aside-title">Recent Comments</h2>
+                    <ul>
+                        <li><img src="../../../assets/li-link.png" alt="" class="li-link">aasdas</li>
+                        <li><img src="../../../assets/li-link.png" alt="" class="li-link">aasdas</li>
+                        <li><img src="../../../assets/li-link.png" alt="" class="li-link">aasdas</li>
+                        <li><img src="../../../assets/li-link.png" alt="" class="li-link">aasdas</li>
+                        <li><img src="../../../assets/li-link.png" alt="" class="li-link">aasdas</li>
+                    </ul>
+                    <div class="box-bottom-border"></div>
+                </div> 
+    </aside>
     </div>
+</div>
 </div>
