@@ -1,6 +1,3 @@
-{{!-- <div class="current-nav">
-    <p><a href="#/">Home</a> >> <a>{{category}}</a> >> <a>{{title}}</a></p>
-</div> --}}
 <ol class="breadcrumb">
   <li class="breadcrumb-item"><a href="#/home">Home</a></li>    
   <li class="breadcrumb-item"><a href="#">{{category}}</a></li>
@@ -58,22 +55,22 @@
                 <div class="box-bottom-border"></div>
             </div>
             <div class="current-box-comments">
-                <div class="box-top-border"></div>
+               <div class="box-top-border"></div>
                 <div>
                     <h2 class="box-title">{{comments.length}} Comments</h2>
                 </div>
-                <div class="comments-container">
-                    {{#each comments}}
+               <div class="comments-container">
+                    {{#if comments}} {{#comments}}
                         <div class="comment">
                             <div class="comment-data">
-                                <img src="http://via.placeholder.com/100x100" alt="" class="comment-img">
+                                <img src="https://avatar.artofproblemsolving.com/avatar_362807.jpg?t=1501361955" alt="" class="comment-img">
                                 <div class="comment-details">
                                     <h2 class="comment-author">{{postedBy}}</h2>
-                                    <p class="comment-content">{{article}}</p>
+                                    <p class="comment-content">{{content}}</p>
                                     <button class="reply-button">REPLY</button>
                                 </div>
                             </div>
-                            {{#if subComments.length}}
+                           <!-- {{#if subComments.length}}
                                 <div class="subcomments">
                                     {{#each subComments}}
                                         <div class="subcomment">
@@ -88,21 +85,24 @@
                                         </div>
                                     {{/each}}
                                 </div>
-                            {{/if}}
-                            <br>
-                            <br>
+                            {{/if}} -->
                         </div>
-                    {{/each}}
+                    {{/comments}} {{else}}
+                    <h1>This article has no comments yet</h1>
+            {{/if}}
                 </div>
-                <form action="/blog/{{_id}}/comments/-2" class="comment-form" method="POST">
+               <form id="leave-reply" <!--action="/blog/{{_id}}/comments/-2"--> class="comment-form" method="POST">
                     <h2 class="box-title">Leave a comment</h2>
-                    <input type="text" placeholder="Nickname" id="form-nickname">
-                    <br>
-                    <input type="text" placeholder="Avatar url" id="form-avatarUrl">
-                    <br>
-                    <textarea rows="4" placeholder="Message" id="form-message"></textarea>
-                    <br>
-                    <button class="submit-comment">SUBMIT</button>
+                    <div class="form-group">
+                    <input type="text" placeholder="Email Address" id="leave-reply-email">
+                    </div>
+                    <div class="form-group">
+                    <input type="text" placeholder="Avatar URL" id="leave-reply-avatar">
+                    </div>
+                    <div class="form-group">
+                    <textarea rows="4" placeholder="Message" id="leave-reply-text"></textarea>
+                    </div>
+                    <button type ="submit" class="submit-comment" id="leave-reply-submit" class="btn btn-default">SUBMIT</button>
                     {{!--<input type="submit" value="SUBMIT"/>--}}
                 </form>
                 <div class="box-bottom-border"></div>
