@@ -10,6 +10,8 @@ module.exports = function({ app, controller }) {
         .get("/blogs/:id", controller.blogController.getById)
         .post("/blogs/:id", controller.blogController.addComment)
         .get("/blogs/:subcategory/:category", controller.blogController.listBlogsByCategoryByName)
+        .get("/search/category/:category", controller.blogController.searchBlogsCategory)
+        .get("/search/subcategory/:subcategory", controller.blogController.searchBlogsSubCategory)
         .get("/users", controller.userController.getAll)
         .get("/users/:id", controller.userController.getById)
         .post("/blogs", controller.blogController.create)

@@ -90,6 +90,30 @@ module.exports = function(BlogPost) {
         });
     }
 
+    function getSearchBlogsCategory(category) {
+        return new Promise((resolve, reject) => {
+            BlogPost.find({ category: category }, (err, blogs) => {
+                if (err) {
+                    return reject(err);
+                }
+                return resolve(blogs);
+                console.log(blogs);
+            });
+        });
+    }
+
+    function getSearchBlogsSubcategory(subcategory) {
+        return new Promise((resolve, reject) => {
+            BlogPost.find({ subcategory: subcategory }, (err, blogs) => {
+                if (err) {
+                    return reject(err);
+                }
+                return resolve(blogs);
+                console.log(blogs);
+            });
+        });
+    }
+
 
     return {
         create,
@@ -97,6 +121,8 @@ module.exports = function(BlogPost) {
         all,
         addComment,
         sortByNewlyCreated,
-        getCategoryByName
+        getCategoryByName,
+        getSearchBlogsCategory,
+        getSearchBlogsSubcategory
     };
 };

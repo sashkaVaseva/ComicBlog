@@ -76,6 +76,25 @@ export default {
                         });
                 });
             });
-
+    },
+    searchCategory: function(context) {
+        let category = context.params.category;
+        Promise.all([data.allCategoryName(category), templates.load("list-blogs-category")])
+            .then(function([blogs, template]) {
+                console.log(blogs);
+                context.$element().html(template({
+                    blogs: blogs
+                }));
+            });
+    },
+    searchSubCategory: function(context) {
+        let subcategory = context.params.subcategory;
+        Promise.all([data.allSubcategoryName(subcategory), templates.load("list-blogs-category")])
+            .then(function([blogs, template]) {
+                console.log(blogs);
+                context.$element().html(template({
+                    blogs: blogs
+                }));
+            });
     }
 };

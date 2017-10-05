@@ -20,5 +20,15 @@ export default {
         return requester.get("/blogs/" + subcategory + "/" + category).then(blogs => {
             return blogs;
         });
+    },
+    allCategoryName: function(category) {
+        return requester.get("/search/category/" + category).then(blogs => {
+            return blogs;
+        });
+    },
+    allSubcategoryName: function(subcategory) {
+        return requester.get("/search/subcategory/" + subcategory).then(blogs => {
+            return blogs;
+        });
     }
 };

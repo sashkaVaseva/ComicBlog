@@ -68,7 +68,20 @@ module.exports = function(data) {
                 .then(blogs => {
                     res.status(200).json(blogs);
                 }).catch((err) => res.status(500).json(err, "Blogs not found"));
-        }
+        },
+
+        searchBlogsCategory(req, res) {
+            data.blogData.getSearchBlogsCategory(req.params.category)
+                .then(blogs => {
+                    res.status(200).json(blogs);
+                }).catch((err) => res.status(500).json(err, "Blogs not found"));
+        },
+        searchBlogsSubCategory(req, res) {
+            data.blogData.getSearchBlogsSubcategory(req.params.subcategory)
+                .then(blogs => {
+                    res.status(200).json(blogs);
+                }).catch((err) => res.status(500).json(err, "Blogs not found"));
+        },
 
     };
 };
