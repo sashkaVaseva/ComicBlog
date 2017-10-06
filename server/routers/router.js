@@ -6,7 +6,7 @@ module.exports = function({ app, controller }) {
 
     router
     //.get("/blogs", controller.blogController.getAll)
-        .get("/blogs", controller.blogController.listNewest)
+        .get("/blogs", controller.blogController.getAllBlogsPagination)
         .get("/blogs/:id", controller.blogController.getById)
         .post("/blogs/:id", controller.blogController.addComment)
         .get("/blogs/:subcategory/:category", controller.blogController.listBlogsByCategoryByName)

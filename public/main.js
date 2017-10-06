@@ -4,8 +4,6 @@ import blogsController from "./app/js/controllers/blogsController.js";
 import usersController from "./app/js/controllers/usersController.js";
 import strSearcher from "./helpers/search-params-verifier.js";
 import notifier from "./helpers/notifier.js";
-import "./helpers/loader.js";
-import { nextPage as nextPage, prevPage as prevPage, getPage as getPage } from "./helpers/change-page.js";
 
 ((function() {
     let sammyApp = Sammy("#content", function() {

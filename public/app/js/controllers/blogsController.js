@@ -6,17 +6,15 @@ import data from "../data/blogs-data.js";
 
 export default {
     home: function(context) {
-        Promise.all([data.all(), templates.load("home")])
-            .then(function([blogs, template]) {
-                console.log(blogs);
-                /*let homePageBlogs = [];
-                homePageBlogs.push(blogs[3]);
-                homePageBlogs.push(blogs[6]);
-                homePageBlogs.push(blogs[1]);*/
-
+        let page = context.params.page;
+        let size = context.params.size;
+        Promise.all([data.all(page, size), templates.load("home")])
+            .then(function([result, template]) {
+                let homeBlogs = JSON.parse(JSON.stringify(result.result.blogs));
+                let homePagination = JSON.parse(JSON.stringify(result.result.pagination));
                 context.$element().html(template({
-                    // blogs: homePageBlogs,
-                    blogs: blogs
+                    blogs: homeBlogs,
+                    pagination: homePagination
                 }));
             });
     },
