@@ -59,15 +59,19 @@ export default {
                     let user = localStorage.getItem("user");
                     let newUser = JSON.parse(user);
 
+                    let tagsStr = $("#create-tags").val();
+                    var tagsArray = tagsStr.split(" ").filter(i => i);
+
                     let post = {
                         title: $("#title").val(),
                         category: $("#category").val(),
                         subcategory: $("#subcategory").val(),
                         image: $("#image").val(),
-                        videoUrl: $("#videoUrl").val(),
                         article: $("#article").val(),
+                        tags: [],
                         postedBy: newUser.username
                     };
+                    post.tags.push(...tagsArray);
 
                     data.create(post)
                         .then(() => {

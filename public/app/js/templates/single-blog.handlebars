@@ -19,9 +19,9 @@
                             <div class="tags-wrapper">
                             <h2>Tags</h2>
                             <ul>
-                                {{#subcategory}}
-                                <li>{{subcategory}}</li>
-                                {{/subcategory}}
+                                {{#each tags}}
+                                <li>{{this}}</li>
+                                {{/each}}
                             </ul>
                             <div class="clear-float"></div>
                             </div>

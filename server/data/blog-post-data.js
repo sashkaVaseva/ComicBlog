@@ -6,12 +6,12 @@ module.exports = function(BlogPost) {
             title: options.title,
             article: options.article,
             image: options.image,
-            videoUrl: options.videoUrl,
-            category: options.category || "Common",
-            subcategory: options.subcategory || "Common",
+            category: options.category,
+            subcategory: options.subcategory,
             postedBy: options.postedBy,
             postedOn: options.postedOn,
-            comments: options.comments || {}
+            tags: options.tags,
+            comments: options.comments
         });
 
         return new Promise((resolve, reject) => {

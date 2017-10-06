@@ -34,6 +34,9 @@ let blogPostSchema = mongoose.Schema({
         type: String,
         default: dateFormat("mmm d")
     },
+    tags: {
+        type: [String]
+    },
     comments: [{
         postedBy: String,
         postedOn: {
@@ -41,7 +44,6 @@ let blogPostSchema = mongoose.Schema({
             default: dateFormat("mmm d")
         },
         content: String
-            // required: requiredMessage
     }]
 });
 

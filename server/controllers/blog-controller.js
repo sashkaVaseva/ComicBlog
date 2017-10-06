@@ -6,11 +6,11 @@ module.exports = function(data) {
                 title: req.body.title,
                 article: req.body.article,
                 image: req.body.image || "Not Provided",
-                videoUrl: req.body.videoUrl || "Not Provided",
                 category: req.body.category,
                 subcategory: req.body.subcategory,
                 postedBy: req.body.postedBy,
                 postedOn: req.body.postedOn,
+                tags: req.body.tags,
                 comments: req.body.comments
             };
             data.blogData.create(blogPost)
