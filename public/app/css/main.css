@@ -560,6 +560,10 @@ nav .search-img {
     margin: 3px;
 }
 
+.current-box-tags ul li:nth-of-type(3n + 1) {
+  margin-left:0;
+}
+
 /* .current-box-related, .current-box-share {
     margin-top: 25px;
     margin-left:32px;
