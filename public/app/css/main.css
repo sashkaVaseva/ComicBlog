@@ -1034,6 +1034,10 @@ footer ul li img {
 	.current-box .zero-padding, .current-box .content-box {
 		padding-bottom: 0;
 	}
+
+	#leave-reply{
+		width:100%;
+	}
 }
 
 @media only screen and (min-width: 577px) and (max-width: 768px){
@@ -1075,5 +1079,9 @@ footer ul li img {
 
 	.content-wrap{
 		padding-left:0;
+	}
+
+	#leave-reply{
+		width:70%;
 	}
 }
