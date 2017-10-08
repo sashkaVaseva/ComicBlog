@@ -783,11 +783,11 @@ nav .search-img {
 
 /*SINGLE BLOG POST SIDE MENU*/
 
-aside {
+/* aside {
     float: left;
     margin-right: 64px;
     padding-left: 15px;
-}
+} */
 
 aside ul {
     list-style-type: none;
